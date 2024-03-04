@@ -11,12 +11,11 @@
     <label> Enter Element Number :-
         <input type="text" name="" id="input-text">
     </label>
-    <button onclick="getInput()">Get Element</button>
+    <button id="btn">Get Element</button>
     <p></p>
     <script>
-
         let arrData = [6, 54, 65, 46, 4, 986, 46, 54, 68, 9, 8, 7, 71, 3, 13];
-
+        
         // for(let i = 0 ; i < arrData.length ; i++){
         //     document.write(`${i}  ${arrData[i]}<br>`);
         // }
@@ -24,44 +23,25 @@
         // console.log(arrData[x]);
         // console.log(btn);
 
-        let btn = document.getElementsByTagName("btn");
-    
         function getInput() {
+            let inputTextValue = document.getElementById("input-text").value;
+            let valueByuser = parseInt(inputTextValue);
+            let p = document.querySelector("p");
 
-             let inputTextValue = document.getElementById("input-text").value;
-             let valueByuser = parseInt(inputTextValue);
-             let p = document.querySelector("p");
-
-             if(!isNaN(valueByuser) && valueByuser >= 0 && valueByuser < arrData.length ){
-               p.innerText = arrData[valueByuser];
-             }else if(isNaN(valueByuser)){
-               p.innerText = "Enter Valid Number";
-             }else if(valueByuser < 0){
+            if (!isNaN(valueByuser) && valueByuser >= 0 && valueByuser < arrData.length) {
+                p.innerText = arrData[valueByuser];
+            } else if (isNaN(valueByuser)) {
+                p.innerText = "Enter Valid Number";
+            } else if (valueByuser < 0) {
                 p.innerText = "Negative Number";
-             }
-             else{
+            }
+            else {
                 p.innerText = "Number out of range";
-             }
-
-
-            // let inputTextValue = document.getElementById("input-text").value;
-            // let valueByuser = parseInt(inputTextValue);
-            // let p = document.querySelector("p");
-
-            // if (!isNaN(valueByuser) && valueByuser >= 0 && valueByuser < arrData.length) {
-            //     p.innerText = arrData[valueByuser];
-            // } else if (isNaN(valueByuser)) {
-            //     p.innerText = "Enter a valid Number";
-            // } else if (valueByuser < 0) {
-            //     p.innerText = "Negative Number";
-            // } else {
-            //     p.innerText = "Number out of range";
-            // }
-
-
+            }
         }
 
-
+        let btn = document.getElementById("btn");
+        btn.addEventListener('click', getInput);
 
 
     </script>
