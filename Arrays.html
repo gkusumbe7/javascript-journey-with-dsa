@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <label> Enter Element Number :- 
-        <input type="text" name="" id="input-text">        
+    <label> Enter Element Number :-
+        <input type="text" name="" id="input-text">
     </label>
     <button onclick="getInput()">Get Element</button>
     <p></p>
-<script>
+    <script>
 
-    let arrData = [6,54,65,46,4,986,46,54,68,9,8,7,71,3,13];
-    // for(let i = 0 ; i < arrData.length ; i++){
-    //     document.write(`${i}  ${arrData[i]}<br>`);
-    // }
-    // let x = 5;
-    // console.log(arrData[x]);
-    // console.log(btn);
+        let arrData = [6, 54, 65, 46, 4, 986, 46, 54, 68, 9, 8, 7, 71, 3, 13];
 
-    function getInput(){
-        // let btn = document.getElementsByTagName("button");
-         let inputTextValue = document.getElementById("input-text").value;
-         let valueByuser = parseInt(inputTextValue);
-         let p = document.querySelector("p");
-         if(typeof parseInt(valueByuser) === "number" && valueByuser < arrData.length){
-            p.innerText = arrData[valueByuser];
-         }else{
-            p.innerText = "Enter valid Number";
-         }
+        // for(let i = 0 ; i < arrData.length ; i++){
+        //     document.write(`${i}  ${arrData[i]}<br>`);
+        // }
+        // let x = 5;
+        // console.log(arrData[x]);
+        // console.log(btn);
 
-    }
+        let btn = document.getElementsByTagName("btn");
     
-   
-   
+        function getInput() {
 
-</script>
+             let inputTextValue = document.getElementById("input-text").value;
+             let valueByuser = parseInt(inputTextValue);
+             let p = document.querySelector("p");
+
+             if(!isNaN(valueByuser) && valueByuser >= 0 && valueByuser < arrData.length ){
+               p.innerText = arrData[valueByuser];
+             }else if(isNaN(valueByuser)){
+               p.innerText = "Enter Valid Number";
+             }else if(valueByuser < 0){
+                p.innerText = "Negative Number";
+             }
+             else{
+                p.innerText = "Number out of range";
+             }
+
+
+            // let inputTextValue = document.getElementById("input-text").value;
+            // let valueByuser = parseInt(inputTextValue);
+            // let p = document.querySelector("p");
+
+            // if (!isNaN(valueByuser) && valueByuser >= 0 && valueByuser < arrData.length) {
+            //     p.innerText = arrData[valueByuser];
+            // } else if (isNaN(valueByuser)) {
+            //     p.innerText = "Enter a valid Number";
+            // } else if (valueByuser < 0) {
+            //     p.innerText = "Negative Number";
+            // } else {
+            //     p.innerText = "Number out of range";
+            // }
+
+
+        }
+
+
+
+
+    </script>
 </body>
+
 </html>
