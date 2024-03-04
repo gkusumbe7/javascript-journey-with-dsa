@@ -6,17 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <label> Enter Element Number :- 
+        <input type="text" name="" id="input-text">        
+    </label>
+    <button onclick="getInput()">Get Element</button>
+    <p></p>
 <script>
 
     let arrData = [6,54,65,46,4,986,46,54,68,9,8,7,71,3,13];
     // for(let i = 0 ; i < arrData.length ; i++){
     //     document.write(`${i}  ${arrData[i]}<br>`);
     // }
-  
     // let x = 5;
     // console.log(arrData[x]);
+    // console.log(btn);
+
+    function getInput(){
+        // let btn = document.getElementsByTagName("button");
+         let inputTextValue = document.getElementById("input-text").value;
+         let valueByuser = parseInt(inputTextValue);
+         let p = document.querySelector("p");
+         if(typeof parseInt(valueByuser) === "number" && valueByuser < arrData.length){
+            p.innerText = arrData[valueByuser];
+         }else{
+            p.innerText = "Enter valid Number";
+         }
+
+    }
+    
    
+   
+
 </script>
 </body>
 </html>
