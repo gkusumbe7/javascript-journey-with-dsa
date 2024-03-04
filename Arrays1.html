@@ -11,6 +11,7 @@
     <label> Enter Element Number :-
         <input type="text" name="" id="input-text">
     </label>
+
     <button id="btn">Get Element</button>
     <p></p>
     <script>
@@ -25,6 +26,7 @@
 
         function getInput() {
             let inputTextValue = document.getElementById("input-text").value;
+            console.log(inputTextValue);
             let valueByuser = parseInt(inputTextValue);
             let p = document.querySelector("p");
 

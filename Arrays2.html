@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Inset Element in Arrays
+        1. Uderstand issue and solution with whiteboard
+        2.Make Array , define the loop.
+        3.User loop to insert new element.
+        4.Insert element with text input and button.
+        5.Insert Element with by default function.
+     -->
+    
+    <p>Given Array is arr1 : 
+    <span id="arr1"></span></p>
+     <br> <br>
+    <label for="text">Enter New Number</label>
+    <input type="text" name="" id="input-text"> 
+    <button id="btn">Add Value</button><br><br>
+    <label for="text">Enter Position</label>
+    <input type="text" name="" id="position-text">
+    <button id="btn-p">Add Position</button>
+    <br><br>
+    <button id="update">Update</button>
+    <p>Updated Arr is <span id="updatedArr"></span></p>
+    <script>
+
+        let btnNewNum = document.getElementById("btn");
+        let btnAddPostiont = document.getElementById("btn-p");
+        let updatedArrIs= document.getElementById("updatedArr");
+        let updateBtn = document.getElementById("update");
+
+        let arr = [3, 2, 5, 6, 4];
+        arr1.innerText = arr;
+
+        // function addNewEleInArr(){
+        //     let arr1 = document.getElementById("arr1");    
+        //     let inputTextValue = document.getElementById("input-text").value;
+        //     let 
+        //     // console.log('working')
+        // }
+
+        // let addNewEle = 0;
+        // btnNewNum.addEventListener('click',function(){
+        //     let num = document.getElementById("input-text").value;
+        //     addNewEle = parseInt(num);
+        //     console.log(addNewEle)
+        // });
+       
+
+        // let addPostionNum = 0;
+        // btnAddPostiont.addEventListener('click',function(){
+        // let num = document.getElementById("position-text").value;
+        // addPostionNum = parseInt(num);
+        // console.log(addPostionNum)
+        //  });
+    
+         updateBtn.addEventListener('click',function(){
+            let num1 = document.getElementById("input-text").value;
+            
+            addNewEle = parseInt(num1);
+            let num2 = document.getElementById("position-text").value;
+            
+            
+            addPostionNum = parseInt(num2);
+            // console.log(addNewEle,addPostionNum);
+
+
+            for(let i = arr.length -1 ; i >= 0 ; i--){
+                if(i >= addPostionNum ){
+                    arr[i+1] = arr[i];
+                    if(i == addPostionNum){
+                        arr[i] = addNewEle;
+                    }
+                }
+            }
+            updatedArrIs.innerText = arr;
+         })
+
+
+
+
+
+
+        // let arr = [3, 2, 5, 6, 4];
+
+        // let newEle = document.getElementById("input-text").value;
+
+        // console.log(newEle);
+
+        // let newEleByUser = 10;
+
+        // let position = 2;
+
+
+        // btn.addEventListener('click', function () {
+        //     for (let i = arr.length - 1; i >= 0; i--) {
+        //         if (i >= position) {
+        //             arr[i + 1] = arr[i];
+        //             if (i == position) {
+        //                 arr[i] = newEleByUser;
+        //             }
+        //         }
+        //         console.log(arr);
+        //     }
+        // });
+
+
+
+        // for(let i = arr.length -1 ; i>=0 ; i--){
+        //   console.log(arr[i]);
+        //    if(i >= position){
+        //         arr[i+1] = arr[i];
+        //        if(i == position){
+        //         arr[i] = newEle;
+        //        }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
