@@ -7,37 +7,291 @@
 </head>
 <body>
     
-
     <script>
-
-        // CallBack Hell
-
-        //  let a = 10;
-        //  let b = 50;
-        //  let c = 100;
-        //  let d = 654;
-        //  console.log(a);
-
-        // function getData(dataID , getNextData){
+        // console.log("Ganesh");
+        // setTimeout( ()=>{
+        //     console.log("Print 1");
         //     setTimeout(()=>{
-        //         console.log("data" , dataID);
-        //       if(getNextData){
-        //         getNextData();
-        //       }
-        //     } , 2000)
-        // }
+        //         console.log("print 2");
+        //         setTimeout(()=>{
+        //             console.log("Loop End");
+        //         },5000);
+        //     } , 3000);
+        // } , 4000);
+        // console.log("Jay Shiv");
+        // console.log("Arvind");
+    
 
-        // getData(a,()=>{
-        //     console.log();
-        //     getData(b ,()=>{
-        //         getData(c , ()=>{
-        //             getData(d);
-        //         });
-        //     });
-        // });
+        // callBacks
+
+        //     function sum(a , b){
+        //         console.log(a+b);
+        //     }
+
+        //     funct    ion calculator(a ,b , passingFunctionIs){
+        //         sum(a,b);
+        //     };
+
+        //  calculator(8 , 8 , sum);
+
+
+        // const hellow = () => {
+        //         console.log("HEllow");
+        //     }
+
+        //     setTimeout(hellow, 4000);
 
 
 
-    </script>
+    // CallBack HELL
+
+    // let age = 10;
+    // if(age < 19 ){
+    //     if(age > 16 ){
+    //         console.log("Registration For Voting Card");
+    //     }else{
+    //         console.log("Go To Home");
+    //     }
+    // }
+
+    // ex. print number
+
+    // setTimeout(()=>{
+    // console.log("Print data 1");
+    // setTimeout(()=>{
+    //     console.log("Print data 2")
+    // },3000);
+    // } , 2000);
+
+
+
+
+// CallBack Hell
+
+// function printNumber(num , nextPrintinFunction){ 
+//     setTimeout(()=>{
+//         console.log("This is number "+num);
+
+//         if(nextPrintinFunction){
+//         nextPrintinFunction();
+//         }
+//     }, 2000);
+// }
+
+
+// printNumber(23,()=>{
+//     printNumber(875 , ()=>{
+//         printNumber(785 , ()=>{
+//             printNumber(9658);
+//         });
+//     });
+// });
+
+
+
+
+
+// Promises In Javascript
+
+// let promise =  new Promise((resolve , reject)=>{
+//     console.log("This is promise");
+//     // resolve();
+//     setTimeout(()=>{
+//             reject("reject the function");
+//     } , 5000);
+// })
+  
+// const getPromisesData = ()=>{
+//    return new Promise((resolve,reject)=>{
+//         resolve("Success");
+//         // reject("Networ Issue");
+//    });
+// }
+
+// let checkStatus = getPromisesData();
+
+// checkStatus.then((res)=>{
+//     console.log(res);
+// });
+// checkStatus.catch((err)=>{
+//     console.log(err);
+// });
+
+// Promise Chain 
+
+// function asyncFunction(){
+//     return new Promise((resolve ,reject)=>{
+//         setTimeout(()=>{
+//             console.log("Thiss is inner function");
+//             resolve("Suceess");
+//     }, 3000)
+//     });
+// }
+
+// // console.log("fetching data ..............")
+// let p1 = asyncFunction();
+// p1.then((res)=>{
+//     console.log(res);
+// });
+
+// function asyncFunction1(){
+//     return new Promise((resolve ,reject)=>{
+//         setTimeout(()=>{
+//             console.log("Thiss is inner function 1");
+//             resolve("Suceess");
+//     }, 4000)
+//     });
+// }
+
+// function asyncFunction2(){
+//     return new Promise((resolve ,reject)=>{
+//         setTimeout(()=>{
+//             console.log("Thiss is inner function 2");
+//             resolve("Suceess");
+//     }, 4000)
+//     });
+// }
+
+
+// console.log("fetching function 1  ............ ");
+// let p1 = asyncFunction1();
+// p1.then((res)=>{
+//     console.log("Print Function 1" + res);
+    
+// console.log("fetching function function 2 ............ ");
+// let p2 = asyncFunction2();
+// p2.then((res)=>{})
+// });
+
+
+
+// function printNumber(num , nextPrintinFunction){ 
+
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//         console.log("This is number "+num);
+//         resolve();
+//         if(nextPrintinFunction){
+//         nextPrintinFunction();
+//         }
+//         },2000);
+//     });
+// }
+
+
+// printNumber(1).then((res)=>{
+//     console.log("Print value 1 is "+ res);
+//     printNumber(2).then((res)=>{0
+//         console.log("Print  Value 2 is " + res);
+//         printNumber(3).then((res)=>{
+//             console.log("Print  Value 3 is " + res);
+//         });        
+//     })
+// });
+
+
+// printNumber(1).then((res)=>{
+//         return printNumber(2);
+// }).then((res)=>{
+//         return printNumber(3);
+// }).then((res)=>{
+//     console.log("Success");
+// });
+
+
+// AsynFunction
+
+// async function hellow(){
+//     console.log("Hello Ganesh ............");
+// }
+// hellow();
+
+// async function getStudentData(){
+//     return new Promise((resolve,reject)=>{
+        
+//         setTimeout(() => {
+//             console.log('This is async Function ');
+//             resolve();    
+//         }, 3000);    
+        
+//     });
+// }
+
+
+
+// async function functionforWaitiong(){
+//     await getStudentData();
+// }
+
+// getStudentData();
+
+
+
+// async function printNumber(num , nextPrintinFunction){ 
+
+//  return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//     console.log("This is number "+num);
+//     resolve();
+//     if(nextPrintinFunction){
+//     nextPrintinFunction();
+//     }
+//     },2000);
+//   });
+// }
+
+
+// async function showNumber(num , nextPrintinFunction){ 
+
+// return new Promise((resolve,reject)=>{
+//    setTimeout(()=>{
+//    console.log("This is number "+num);
+//    resolve();
+//    if(nextPrintinFunction){
+//    nextPrintinFunction();
+//    }
+//    },5000);
+//  });
+// }
+
+
+
+// async function printingNumbers(){
+   
+//     await printNumber(2);
+//     await printNumber(5);
+//     await showNumber(1);
+//     await printNumber(9);
+//     await printNumber(4);
+// };
+
+// printingNumbers();
+
+
+// Use IIFE Immediately Invoked Function Expression
+
+
+ async function printNumber(num , nextPrintinFunction){ 
+
+ return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+    console.log("This is number "+num);
+    resolve();
+    if(nextPrintinFunction){
+    nextPrintinFunction();
+    }
+    },2000);
+  });
+}
+
+(async function (){   
+    await printNumber(2);
+    await printNumber(5);
+    await showNumber(1);
+    await printNumber(9);
+    await printNumber(4);
+})();
+
+</script>
 </body>
 </html>
